@@ -4,8 +4,17 @@ UI Kit - A collection of reusable Vue 3 components
 
 ## Installation
 
+You can install directly from GitHub (this will run the package's `prepare` script to build before install):
+
 ```bash
-npm install tooling.ui.kit
+# npm
+npm install sw-consulting/tooling.ui.kit
+
+# or with a specific branch or tag
+npm install sw-consulting/tooling.ui.kit#main
+
+# yarn
+yarn add sw-consulting/tooling.ui.kit
 ```
 
 ## Peer Dependencies

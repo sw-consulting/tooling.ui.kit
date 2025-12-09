@@ -1,6 +1,6 @@
 {
   "name": "@sw-consulting/tooling.ui.kit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "UI Kit",
   "type": "module",
   "publishConfig": {
@@ -8,8 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sw-consulting/tooling.ui.kit.git"
+    "url": "git+https://github.com/sw-consulting/tooling.ui.kit.git",
+    "ssh": "git+ssh://git@github.com:sw-consulting/tooling.ui.kit.git"
   },
+  "bugs": {
+    "url": "https://github.com/sw-consulting/tooling.ui.kit/issues"
+  },
+  "homepage": "https://github.com/sw-consulting/tooling.ui.kit#readme",
   "main": "./dist/tooling-ui-kit.umd.js",
   "module": "./dist/tooling-ui-kit.es.js",
   "exports": {
@@ -25,6 +30,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "prepack": "npm run build",
+    "prepare": "npm run build",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest"
