@@ -2,8 +2,6 @@
 // All rights reserved.
 // This file is a part of tooling.ui.kit library
 
-/* global setTimeout */
-
 import { describe, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createVuetify } from 'vuetify'
@@ -208,7 +206,10 @@ describe('ActionButton2L', () => {
     })
 
     it('handles async actions', async () => {
-      const asyncAction = vi.fn(() => new Promise(resolve => setTimeout(resolve, 100)))
+      let resolveAction: (() => void) | undefined
+      const asyncAction = vi.fn(() => new Promise<void>(resolve => {
+        resolveAction = resolve
+      }))
       const wrapper = createWrapper({
         options: [{ label: 'Async Action', action: asyncAction }]
       })
@@ -222,9 +223,12 @@ describe('ActionButton2L', () => {
       expect(asyncAction).toHaveBeenCalled()
       expect(wrapper.vm.isExecuting).toBe(true)
       
-      await vi.waitFor(() => {
-        expect(wrapper.vm.isExecuting).toBe(false)
-      })
+      // Resolve the promise
+      resolveAction!()
+      await nextTick()
+      await nextTick()
+      
+      expect(wrapper.vm.isExecuting).toBe(false)
     })
   })
 
@@ -418,7 +422,10 @@ describe('ActionButton2L', () => {
     })
 
     it('disables all menu items during execution', async () => {
-      const asyncAction = vi.fn(() => new Promise(resolve => setTimeout(resolve, 100)))
+      let resolveAction: (() => void) | undefined
+      const asyncAction = vi.fn(() => new Promise<void>(resolve => {
+        resolveAction = resolve
+      }))
       const wrapper = createWrapper({
         options: [
           { label: 'Async', action: asyncAction },
@@ -433,7 +440,13 @@ describe('ActionButton2L', () => {
       await menuItems[0].trigger('click')
       
       expect(wrapper.vm.isExecuting).toBe(true)
-      // During execution, buttons should be disabled but menu may still be rendering
+      
+      // Resolve the promise
+      resolveAction!()
+      await nextTick()
+      await nextTick()
+      
+      expect(wrapper.vm.isExecuting).toBe(false)
     })
   })
 

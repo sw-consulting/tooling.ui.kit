@@ -19,7 +19,8 @@ interface MenuOption {
 // Type declarations for DOM elements (to avoid no-undef ESLint errors)
 /* global HTMLButtonElement, HTMLDivElement, Element, KeyboardEvent */
 
-const menuId = `action-button-2l-menu-${Math.random().toString(36).slice(2, 10)}`
+// Generate unique ID for menu - using timestamp + random for better uniqueness
+const menuId = `action-button-2l-menu-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`
 
 const props = defineProps({
   ...actionButtonProps,
@@ -301,7 +302,7 @@ defineExpose({
 
 .action-button-2l__menu-item:not([disabled]):not([aria-disabled="true"]):hover,
 .action-button-2l__menu-item:not([disabled]):not([aria-disabled="true"]):focus {
-  background-color: rgba(var(--primary-color-rgb), 0.1);
+  background-color: rgba(var(--primary-color-rgb, 25, 118, 210), 0.1);
   outline: none;
 }
 
