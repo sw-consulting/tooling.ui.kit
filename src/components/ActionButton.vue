@@ -4,7 +4,7 @@
 // This file is a part of tooling.ui.kit library
 
 import { computed, useAttrs } from 'vue'
-import { actionButtonProps, buildActionButtonClasses } from './actionButtonShared'
+import { actionButtonProps, buildActionButtonClasses } from './uiKitShared'
 
 const props = defineProps(actionButtonProps)
 const emit = defineEmits(['click'])
