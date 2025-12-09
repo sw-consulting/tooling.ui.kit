@@ -1,0 +1,50 @@
+{
+  "name": "tooling.ui.kit",
+  "version": "1.0.0",
+  "description": "UI Kit",
+  "type": "module",
+  "main": "./dist/tooling-ui-kit.umd.js",
+  "module": "./dist/tooling-ui-kit.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/tooling-ui-kit.es.js",
+      "require": "./dist/tooling-ui-kit.umd.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext .ts,.vue",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@typescript-eslint/eslint-plugin": "^8.49.0",
+    "@typescript-eslint/parser": "^8.49.0",
+    "@vitejs/plugin-vue": "^6.0.2",
+    "@vue/test-utils": "^2.4.6",
+    "@vue/tsconfig": "^0.8.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-vue": "^10.6.2",
+    "happy-dom": "^20.0.11",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.7",
+    "vitest": "^4.0.15",
+    "vue": "^3.5.25",
+    "vue-eslint-parser": "^10.2.0"
+  }
+}
