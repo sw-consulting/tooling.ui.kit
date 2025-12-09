@@ -1,8 +1,15 @@
 {
-  "name": "tooling.ui.kit",
+  "name": "@sw-consulting/tooling.ui.kit",
   "version": "1.0.0",
   "description": "UI Kit",
   "type": "module",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sw-consulting/tooling.ui.kit.git"
+  },
   "main": "./dist/tooling-ui-kit.umd.js",
   "module": "./dist/tooling-ui-kit.es.js",
   "exports": {
