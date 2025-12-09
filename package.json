@@ -21,7 +21,8 @@
     ".": {
       "import": "./dist/tooling-ui-kit.es.js",
       "require": "./dist/tooling-ui-kit.umd.js"
-    }
+    },
+    "./dist/tooling.ui.kit.css": "./dist/tooling.ui.kit.css"
   },
   "types": "./dist/index.d.ts",
   "files": [
