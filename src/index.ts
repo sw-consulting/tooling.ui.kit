@@ -1,5 +1,4 @@
 // Export your components here
-// Example:
-// export { default as MyComponent } from './components/MyComponent.vue'
+export { default as ActionButton } from './components/ActionButton.vue'
 
 export const version = '1.0.0'

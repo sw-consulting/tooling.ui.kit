@@ -23,18 +23,31 @@ export default defineConfig({
       fileName: (format) => `tooling-ui-kit.${format}.js`
     },
     rollupOptions: {
-      // Externalize Vue to avoid bundling it
-      external: ['vue'],
+      // Externalize Vue, Vuetify and FontAwesome to avoid bundling them
+      external: ['vue', 'vuetify', 'vuetify/components', 'vuetify/directives', '@fortawesome/vue-fontawesome', '@fortawesome/fontawesome-svg-core'],
       output: {
         // Provide global variables to use in the UMD build
         globals: {
-          vue: 'Vue'
+          vue: 'Vue',
+          vuetify: 'Vuetify',
+          '@fortawesome/vue-fontawesome': 'FontAwesomeVue',
+          '@fortawesome/fontawesome-svg-core': 'FontAwesomeSvgCore'
         }
       }
     }
   },
   test: {
     globals: true,
-    environment: 'happy-dom'
+    environment: 'happy-dom',
+    css: {
+      modules: {
+        classNameStrategy: 'non-scoped'
+      }
+    },
+    server: {
+      deps: {
+        inline: ['vuetify']
+      }
+    }
   }
 })
