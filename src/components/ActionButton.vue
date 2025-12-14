@@ -104,6 +104,24 @@ const forwardedAttrs = computed(() => {
   color: #ff8c42 !important;
 }
 
+.anti-btn-magenta {
+  color: #a918c2 !important;
+}
+
+.anti-btn-magenta:hover {
+  color: #d94bdc !important;
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.anti-btn-magenta .button-o-c {
+  color: #a918c2 !important;
+}
+
+.anti-btn-magenta:hover .button-o-c {
+  color: #d94bdc !important;
+}
+
 .anti-btn-green {
   color: #4caf50 !important;
 }
@@ -157,4 +175,5 @@ const forwardedAttrs = computed(() => {
 .anti-btn-blue:hover .button-o-c {
   color: #2196f3 !important;
 }
+
 </style>

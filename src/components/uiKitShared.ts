@@ -37,7 +37,8 @@ export function buildActionButtonClasses(props: { disabled?: boolean; variant?: 
       'anti-btn-orange': props.variant === 'orange',
       'anti-btn-green': props.variant === 'green',
       'anti-btn-red': props.variant === 'red',
-      'anti-btn-blue': props.variant === 'blue'
+      'anti-btn-blue': props.variant === 'blue',
+      'anti-btn-magenta': props.variant === 'magenta'
     },
     attrs.class
   ]

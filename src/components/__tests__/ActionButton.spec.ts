@@ -103,6 +103,12 @@ describe('ActionButton', () => {
       const fontAwesome = wrapper.findComponent({ name: 'FontAwesomeIcon' })
       expect(fontAwesome.props('icon')).toBe('fa-solid fa-trash-can')
     })
+
+    it('applies magenta variant class', () => {
+      const wrapper = createWrapper({ variant: 'magenta' })
+      const button = wrapper.find('button')
+      expect(button.classes()).toContain('anti-btn-magenta')
+    })
   })
 
   describe('interactions', () => {
