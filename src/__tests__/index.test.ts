@@ -25,6 +25,6 @@ import { version } from '../index'
 
 describe('Index', () => {
   it('should export version', () => {
-    expect(version).toBe('1.2.1')
+    expect(version).toBe('1.2.3')
   })
 })

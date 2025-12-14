@@ -1,6 +1,6 @@
 {
   "name": "@sw-consulting/tooling.ui.kit",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "UI Kit",
   "type": "module",
   "publishConfig": {
@@ -15,14 +15,14 @@
     "url": "https://github.com/sw-consulting/tooling.ui.kit/issues"
   },
   "homepage": "https://github.com/sw-consulting/tooling.ui.kit#readme",
-  "main": "./dist/tooling-ui-kit.umd.js",
-  "module": "./dist/tooling-ui-kit.es.js",
+  "main": "./dist/tooling-ui-kit.umd.cjs",
+  "module": "./dist/tooling-ui-kit.js",
   "exports": {
     ".": {
-      "import": "./dist/tooling-ui-kit.es.js",
-      "require": "./dist/tooling-ui-kit.umd.js"
+      "import": "./dist/tooling-ui-kit.js",
+      "require": "./dist/tooling-ui-kit.umd.cjs"
     },
-    "./dist/tooling.ui.kit.css": "./dist/tooling.ui.kit.css"
+    "./dist/tooling-ui-kit.css": "./dist/tooling-ui-kit.css"
   },
   "types": "./dist/index.d.ts",
   "files": [

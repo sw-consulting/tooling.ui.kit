@@ -42,7 +42,11 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'ToolingUIKit',
       formats: ['es', 'umd'],
-      fileName: (format) => `tooling-ui-kit.${format}.js`
+      fileName: (format) => {
+        if (format === 'es') return 'tooling-ui-kit.es.js'
+        if (format === 'umd') return 'tooling-ui-kit.umd.js'
+        return `tooling-ui-kit.${format}.js`
+      }
     },
     rollupOptions: {
       // Externalize Vue, Vuetify and FontAwesome to avoid bundling them
